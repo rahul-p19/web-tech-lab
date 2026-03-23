@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="number" placeholder="Enter number" />
+    <button onclick=handleClick()>Submit</button>
+    <p id="squareOutput"></p>
+    <p id="cubeOutput"></p>
+    <script>
+        function handleClick(){
+            const num = document.getElementById("number").value;
+            const squareOutputBox = document.getElementById("squareOutput");
+            const cubeOutputBox = document.getElementById("cubeOutput");
+            squareOutputBox.innerHTML = `Square: ${num * num}`;
+            cubeOutputBox.innerHTML = `Cube: ${num * num * num}`;
+        }
+    </script>
+</body>
+</html>

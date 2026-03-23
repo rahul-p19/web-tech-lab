@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Registration Form</h1>
+    </div>
+    <div>
+        <input type="text" name="firstName" id="firstName" placeholder="First Name" required />
+    </div>
+    <br />
+    <div>
+        <input type="password" name="password" id="password" placeholder="Password" required />
+    </div>
+    <br />
+    <div>
+        <input type="email" name="email" id="email" placeholder="Email Address" required />
+    </div>
+    <br />
+    <div>
+        <input type="text" name="mobile" id="mobile" placeholder="Mobile Number" required />
+    </div>
+    <br />
+    <div>
+        <input type="text" name="lastName" id="lastName" placeholder="Last Name" required />
+    </div>
+    <br />
+    <div>
+        <input type="text" name="address" id="address" placeholder="Address" required />
+    </div>
+    <br />
+    <button onclick=handleSubmit()>Submit</button>
+    <script>
+        function handleSubmit(){
+            // First Name Validation
+            const firstName = document.getElementById("firstName").value;
+            if(!firstName || firstName.length < 6){
+                alert("First Name must be atleast 6 letters long");
+                return;
+            }
+            for(i in firstName){
+                const ch = firstName[i];
+                if(!((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))){
+                    alert("First Name must contain only alphabets");
+                    return;
+                }
+            }
+
+            // Password Validation
+            const password = document.getElementById("password").value;
+            if(!password || password.length < 6){
+                alert("Password must be atleast 6 letters long");
+                return;
+            }
+
+            // Email validation
+            const email = document.getElementById("email").value;
+            if(!email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)){
+                alert("Email must follow the pattern name@domain.com");
+                return;
+            }
+
+            // Mobile Number validation
+            const mobile = document.getElementById("mobile").value;
+            if(mobile.length !== 10){
+                alert("Mobile number must contain exactly 10 digits");
+                return;
+            }
+            for(ind in mobile){
+                if(!(mobile[ind] >= '0' && mobile[ind] <= '9')){
+                    alert("Mobile number must have digits only");
+                    return;
+                }
+            }
+
+            // Last Name validation
+            const lastName = document.getElementById("lastName").value;
+            if(!lastName){
+                alert("Last Name cannot be empty");
+                return;
+            }
+
+            const address = document.getElementById("address").value;
+            if(!address){
+                alert("Address cannot be empty");
+                return;
+            }
+
+            alert("Valid input!");
+        }
+    </script>
+</body>
+</html>

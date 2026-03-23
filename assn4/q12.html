@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Character Limit Checker</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Character Limit Checker</h2>
+
+      <textarea
+        id="textArea"
+        rows="6"
+        maxlength="200"
+        placeholder="Type something (max 200 characters)..."
+        oninput="checkLimit()"
+      ></textarea>
+
+      <p>Remaining Characters: <span id="remaining">200</span></p>
+    </div>
+
+    <script>
+      function checkLimit() {
+        const textArea = document.getElementById("textArea");
+        const remaining = document.getElementById("remaining");
+
+        const maxLength = 200;
+        const currentLength = textArea.value.length;
+
+        const charactersLeft = maxLength - currentLength;
+
+        remaining.textContent = charactersLeft;
+
+        // Extra safety (prevents typing beyond limit)
+        if (currentLength >= maxLength) {
+          textArea.value = textArea.value.substring(0, maxLength);
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="num1" placeholder="Number 1" />
+    <input type="number" id="num2" placeholder="Number 2" />
+    <input type="number" id="num3" placeholder="Number 3" />
+    <button onclick=handleClick()>Click Me</button>
+    <p id="output"></p>
+    <script>
+        function handleClick(){
+            const num1 = parseInt(document.getElementById("num1").value);
+            const num2 = parseInt(document.getElementById("num2").value);
+            const num3 = parseInt(document.getElementById("num3").value);
+
+            const output = document.getElementById("output");
+            let largest;
+            if(num1 >= num2 && num1 >= num3) largest = num1;
+            else if(num2 >= num1 && num2 >= num3) largest = num2;
+            else largest = num3;
+
+            output.innerHTML = `Largest: ${largest}`;
+        } 
+    </script>
+</body>
+</html>

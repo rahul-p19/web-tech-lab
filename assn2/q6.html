@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="sub1" placeholder="Subject 1" />
+    <input type="number" id="sub2" placeholder="Subject 2" />
+    <input type="number" id="sub3" placeholder="Subject 3" />
+    <button onclick=handleClick()>Click Me</button>
+    <p id="total"></p>
+    <p id="average"></p>
+    <p id="result"></p>
+    <script>
+        function handleClick(){
+            const sub1 = document.getElementById("sub1").value;
+            const sub2 = document.getElementById("sub2").value;
+            const sub3 = document.getElementById("sub3").value;
+            const totalOutput = document.getElementById("total");
+            const averageOutput = document.getElementById("average");
+            const resultOutput = document.getElementById("result");
+
+            const total = parseInt(sub1) + parseInt(sub2) + parseInt(sub3);
+            const average = total / 3;
+            const result = average >= 50 ? 'Pass' : 'Fail';
+
+            totalOutput.innerHTML = `Total: ${total}`;
+            averageOutput.innerHTML = `Average: ${average}`;
+            resultOutput.innerHTML = `Result: ${result}`;
+        }
+    </script>
+</body>
+</html>

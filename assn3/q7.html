@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeClub JUSL</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(
+          to right,
+          #1e3c72,
+          #2a5298
+        );
+        color: white;
+      }
+
+      header {
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid #ffffff50;
+        padding-top: 20px;
+      }
+
+      nav a {
+        color: white;
+        padding: 14px 20px;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      nav a:hover {
+        background: #00c6ff;
+        color: black;
+        transform: scale(1.1);
+      }
+
+      .container {
+        padding: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      .card {
+        background: white;
+        color: black;
+        width: 300px;
+        margin: 15px;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        transition: transform 0.4s;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+      }
+
+      button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 8px;
+        background: linear-gradient(to right, #00c6ff, #0072ff);
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        transform: scale(1.1);
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px;
+        background: #111;
+        margin-top: 20px;
+      }
+
+      #wrapper{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="wrapper">
+
+        <header>
+            <h1>CodeClub JUSL</h1>
+            <p>Innovate. Code. Create.</p>
+            
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Events</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+        
+        <section class="container">
+            <div class="card">
+                <h2>About Us</h2>
+                <p>
+                    CodeClub JUSL is a college coding community that encourages students
+                    to enhance their programming skills, collaborate on projects, and
+                    participate in hackathons.
+                </p>
+            </div>
+            
+            <div class="card">
+        <h2>Our Activities</h2>
+        <p>
+            We organize workshops, coding competitions, tech talks, and
+            collaborative projects to build real-world technical experience.
+        </p>
+    </div>
+    
+    <div class="card">
+        <h2>Join Us</h2>
+        <p>
+            Become a part of a vibrant tech community and boost your coding
+            journey with us!
+        </p>
+        <button onclick="showMessage()">Join Now</button>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 CodeClub JUSL | All Rights Reserved</p>
+</footer>
+</div>
+
+<script>
+    function showMessage() {
+        alert(
+            "Thank you for your interest in CodeClub JUSL! We will contact you soon."
+            );
+        }
+        </script>
+  </body>
+  </html>
+  

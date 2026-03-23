@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fetch JSON Data</title>
+  </head>
+  <style>
+    th,
+    td {
+      padding-block: 5px;
+      padding-inline: 25px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h2>Student Data</h2>
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by name..."
+        onkeyup="searchStudent()"
+      />
+
+      <button onclick="loadData()">Load Students</button>
+
+      <table border="1" style="margin-top: 10px">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Course</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

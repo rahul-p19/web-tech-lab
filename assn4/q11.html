@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dark Light Toggle</title>
+    <style>
+      .dark {
+        background-color: #222;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Dark / Light Theme Toggle</h2>
+      <button onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+
+    <script>
+      window.onload = function () {
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme === "dark") {
+          document.body.classList.add("dark");
+        }
+      };
+
+      function toggleTheme() {
+        document.body.classList.toggle("dark");
+
+        // Save preference in localStorage
+        if (document.body.classList.contains("dark")) {
+          localStorage.setItem("theme", "dark");
+        } else {
+          localStorage.setItem("theme", "light");
+        }
+      }
+    </script>
+  </body>
+</html>

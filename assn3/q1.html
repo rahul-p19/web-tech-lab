@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 1</title>
+</head>
+<body>
+        <input type="text" id="number-input" />
+        <button onclick=handleSubmit()>Submit</button>
+    <p id="number-in-words"></p>
+    <script>
+        function handleSubmit(){
+            displayText("");
+            const input = document.getElementById("number-input").value;
+            if(!input){
+                displayText("No number found");
+                return;
+            }
+            for(i in input){
+                const ch = input[i];
+                if(ch < '0' || ch > '9'){
+                    displayText("Invalid input - only numbers allowed");
+                    return;
+                }
+            }
+            let num = parseInt(input);
+            if(num < 0 || num > 999){
+                displayText("Number must be between 0 and 999");
+                return;
+            }
+            let str = "";
+            const digitToString = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
+            const teensToString = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+            const tensToString = ["Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+            if(num >= 100){
+                const dig = Math.floor(num / 100);
+                num = num % 100;
+                str += digitToString[dig] + " hundred";
+                if(num !== 0) str += " and ";
+            }
+            if(num === 0){
+                displayText(str);
+                return;
+            }
+            if(num < 10) str += digitToString[num];
+            else if(num < 20) str += teensToString[num - 10];
+            else{
+                const dig = Math.floor(num / 10) - 1;
+                str += tensToString[dig];
+                num %= 10;
+                if(num) str += " " + digitToString[num];
+            }
+            displayText(str);
+        }
+
+        function displayText(text){
+            const para = document.getElementById("number-in-words");
+            para.innerText = text;
+        }
+    </script>
+</body>
+</html>

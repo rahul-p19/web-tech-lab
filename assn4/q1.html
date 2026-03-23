@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Question 1</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Student List Manager</h2>
+
+      <input type="text" id="studentName" placeholder="Enter student name" />
+      <button onclick="addStudent()">Add Student</button>
+
+      <h3>Total Students: <span id="totalCount">0</span></h3>
+
+      <ul id="studentList"></ul>
+    </div>
+
+    <script>
+      const studentList = document.getElementById("studentList");
+      const totalCount = document.getElementById("totalCount");
+
+      function addStudent() {
+        const nameInput = document.getElementById("studentName");
+        const name = nameInput.value.trim();
+
+        if (name === "") {
+          alert("Please enter student name");
+          return;
+        }
+
+        const li = document.createElement("li");
+        li.innerText = name;
+        li.style.marginTop = "10px";
+
+        const removeButton = document.createElement("button");
+        removeButton.innerText = "Remove Student";
+        removeButton.style.marginLeft = "10px";
+
+        removeButton.onclick = function () {
+          studentList.removeChild(li);
+          updateCount();
+        };
+
+        li.appendChild(removeButton);
+        studentList.appendChild(li);
+
+        nameInput.value = "";
+        updateCount();
+      }
+
+      function updateCount() {
+        totalCount.innerText = studentList.children.length;
+      }
+    </script>
+  </body>
+</html>

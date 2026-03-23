@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Live Search Filter</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Live Search Filter</h2>
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search item..."
+        onkeyup="filterItems()"
+      />
+
+      <ul id="itemList">
+        <li>India</li>
+        <li>China</li>
+        <li>Russia</li>
+        <li>United States of America</li>
+        <li>United Kingdom</li>
+        <li>Canada</li>
+        <li>Mexico</li>
+        <li>Nepal</li>
+        <li>Bhutan</li>
+        <li>Australia</li>
+        <li>Portugal</li>
+        <li>Spain</li>
+        <li>Switzerland</li>
+      </ul>
+    </div>
+
+    <script>
+      function filterItems() {
+        const input = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const items = document.querySelectorAll("#itemList li");
+
+        const itemArray = Array.from(items);
+
+        itemArray.filter((item) => {
+          if (item.textContent.toLowerCase().includes(input)) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="number" placeholder="Enter number" />
+    <button onclick=handleClick()>Submit</button>
+    <p id="output"></p>
+    <script>
+        function handleClick(){
+            const num = document.getElementById("number").value;
+            const outputBox = document.getElementById("output");
+            if(num % 2 === 0) outputBox.innerHTML = "Even Number";
+            else outputBox.innerHTML = "Odd Number";
+        }
+    </script>
+</body>
+</html>

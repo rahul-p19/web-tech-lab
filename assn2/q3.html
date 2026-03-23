@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick=handleClick()>Click Me</button>
+    <p id="counter">0</p>
+    <script>
+        let count = 0;
+        const counter = document.getElementById("counter");
+        function handleClick(){
+            ++count;
+            counter.innerHTML = count;
+        }
+    </script>
+</body>
+</html>
